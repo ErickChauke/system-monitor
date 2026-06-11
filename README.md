@@ -52,7 +52,10 @@ end of the run.
 A shareable `monitor.html`, the exported notebook with all results, sits in the project
 root for handing to anyone without Python.
 
-## How to run
+There are two ways to run it: the notebook for working through it step by step, and a
+standalone script for running the whole job in one go.
+
+### As a notebook
 
 1. Open `monitor.ipynb` in VS Code or Jupyter.
 2. Run the cells from the top: the config cell, then the dependencies setup cell (it
@@ -65,6 +68,17 @@ For a quick demonstration instead of the full day, pass a short interval and dur
 
     from datetime import timedelta
     run_full_monitor(interval=timedelta(seconds=10), duration=timedelta(seconds=30))
+
+### As a script from PowerShell
+
+`monitor.py` is the same monitor as a standalone script, and `run.ps1` launches it. From a
+PowerShell prompt in the project folder:
+
+    .\run.ps1          # real run, every 5 minutes for 24 hours
+    .\run.ps1 -Demo    # quick demonstration, about 30 seconds
+
+`monitor.py` is generated from the notebook, so the notebook stays the source of truth.
+Edit the notebook and regenerate the script rather than editing `monitor.py` by hand.
 
 ## Dependencies
 
