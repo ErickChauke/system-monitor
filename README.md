@@ -78,9 +78,3 @@ For a quick demonstration instead of the full day, pass a short interval and dur
 Everything adjustable lives in the config cell at the top: the sample interval, the total
 run duration, the output paths, the alarm thresholds, the list of required services, and
 the statistical baseline settings. Change them there and rerun.
-
-## Exporting the HTML
-
-To refresh the shareable HTML after a run, convert the saved notebook from a terminal:
-
-    jupyter nbconvert --to html monitor.ipynb
