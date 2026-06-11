@@ -201,7 +201,7 @@ def collect_temperature(timestamp):
 
     return {
         "Time": timestamp,
-        "CPU Temperature (°C)": temperature,
+        "CPU Temperature (Celsius)": temperature,
     }
 
 
@@ -664,7 +664,7 @@ def check_fixed_thresholds():
             alarms.append(_alarm(time, "Fixed threshold", "GPU", gpu, GPU_ALARM_PERCENT,
                 "GPU usage {}% is above the {}% limit".format(gpu, GPU_ALARM_PERCENT)))
 
-        temperature = row.get("CPU Temperature (°C)")
+        temperature = row.get("CPU Temperature (Celsius)")
         if _is_number(temperature) and temperature > TEMPERATURE_ALARM_C:
             alarms.append(_alarm(time, "Fixed threshold", "Temperature", temperature, TEMPERATURE_ALARM_C,
                 "CPU temperature {}C is above the {}C limit".format(temperature, TEMPERATURE_ALARM_C)))
@@ -703,7 +703,7 @@ BASELINE_METRICS = [
     "Overall CPU Usage (%)",
     "Memory Usage (%)",
     "GPU Usage (%)",
-    "CPU Temperature (°C)",
+    "CPU Temperature (Celsius)",
 ]
 
 # Need at least this many normal readings of a metric to trust its range.

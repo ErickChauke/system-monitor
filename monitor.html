@@ -7894,7 +7894,7 @@ error stop the run, so the timestamp and the rest of the sample are still captur
 
     <span class="k">return</span> <span class="p">{</span>
         <span class="s2">"Time"</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
-        <span class="s2">"CPU Temperature (°C)"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+        <span class="s2">"CPU Temperature (Celsius)"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
     <span class="p">}</span>
 
 
@@ -9041,7 +9041,7 @@ how many alarms it found and the first few.</p>
             <span class="n">alarms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_alarm</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s2">"Fixed threshold"</span><span class="p">,</span> <span class="s2">"GPU"</span><span class="p">,</span> <span class="n">gpu</span><span class="p">,</span> <span class="n">GPU_ALARM_PERCENT</span><span class="p">,</span>
                 <span class="s2">"GPU usage </span><span class="si">{}% i</span><span class="s2">s above the </span><span class="si">{}% li</span><span class="s2">mit"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="n">GPU_ALARM_PERCENT</span><span class="p">)))</span>
 
-        <span class="n">temperature</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"CPU Temperature (°C)"</span><span class="p">)</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"CPU Temperature (Celsius)"</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">_is_number</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span> <span class="ow">and</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="n">TEMPERATURE_ALARM_C</span><span class="p">:</span>
             <span class="n">alarms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_alarm</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="s2">"Fixed threshold"</span><span class="p">,</span> <span class="s2">"Temperature"</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">TEMPERATURE_ALARM_C</span><span class="p">,</span>
                 <span class="s2">"CPU temperature </span><span class="si">{}</span><span class="s2">C is above the </span><span class="si">{}</span><span class="s2">C limit"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">TEMPERATURE_ALARM_C</span><span class="p">)))</span>
@@ -9136,7 +9136,7 @@ followed by one clear spike, which the benchmark flags.</p>
     <span class="s2">"Overall CPU Usage (%)"</span><span class="p">,</span>
     <span class="s2">"Memory Usage (%)"</span><span class="p">,</span>
     <span class="s2">"GPU Usage (%)"</span><span class="p">,</span>
-    <span class="s2">"CPU Temperature (°C)"</span><span class="p">,</span>
+    <span class="s2">"CPU Temperature (Celsius)"</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="c1"># Need at least this many normal readings of a metric to trust its range.</span>
